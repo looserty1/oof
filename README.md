@@ -1,3 +1,3 @@
 # oof
 
-oof, the game the musical the series
+oof: the musical: the series: the game
