@@ -37,8 +37,8 @@ function onupdate() {
   if (map[translate("KeyA")]) {
     xv -= 1;
   }
-  if (!(map[translate("KeyD")]) && !(map[translate("KeyA")])) {
-    xv = 0;
+  if (!(map[translate("KeyD")]) && !(map[translate("KeyA")]) && xv != 0) {
+    xv += Math.abs(xv)/xv * -1;
   }
   if (Math.abs(xv) > 10) {
     xv = Math.abs(xv)/xv * 10;
