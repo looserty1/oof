@@ -11,6 +11,7 @@ const kick1 = document.getElementById("img1"); //Leftf
 //[frame, x, y, width, height]
 
 let FBI = [idle, 0, 0, 10, 20];
+let Obs = ["frame", 50, 108, 40, 20];
 
 function spriter(character) {
   ctx.fillRect(character[1] * pxsize, character[2] * pxsize, character[3] * pxsize, character[4] * pxsize);
@@ -22,8 +23,10 @@ let yv = 0;
 let xv = 0;
 let number = 0;
 function onupdate() {
+  document.getElementById("xv").innerHTML = xv;
   ctx.clearRect(0, 0, c.width, c.height);
   spritere(FBI);
+  spriter(Obs);
   //Game Play
   if (FBI[2] < 128 - FBI[4]) {
     yv += 1;
@@ -44,8 +47,8 @@ function onupdate() {
     }
     FBI[3] = 20;
     FBI[4] = 10;
-    if (Math.abs(xv) > 15) {
-      xv = 15 * Math.abs(xv)/xv;
+    if (Math.abs(xv) > 20) {
+      xv = 18 * Math.abs(xv)/xv;
     }
   } else {
     FBI[0] = idle;
@@ -71,7 +74,6 @@ function onupdate() {
   FBI[1] += xv;
   FBI[2] += yv;
 }
-
 
 let state;
 window.onload = () => {
